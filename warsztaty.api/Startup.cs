@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RawRabbit.vNext;
+using warsztaty.API.Framework;
 
 namespace dev_warsztaty
 {
@@ -29,6 +31,8 @@ namespace dev_warsztaty
         {
             // Add framework services.
             services.AddMvc();
+
+            ConfigureRabbitMq(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +42,17 @@ namespace dev_warsztaty
             loggerFactory.AddDebug();
 
             app.UseMvc();
+        }
+
+        private void ConfigureRabbitMq(IServiceCollection services)
+        {
+            var options = new RabbitMqOptions();
+            var section = Configuration.GetSection("rabbitmq");
+            section.Bind(options);
+            services.Configure<RabbitMqOptions>(section);
+
+            var client = BusClientFactory.CreateDefault(options);
+            services.AddSingleton(client);
         }
     }
 }
