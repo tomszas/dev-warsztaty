@@ -64,7 +64,7 @@ namespace project2
             services.Configure<RabbitMqOptions>(section);
 
             IBusClient client = BusClientFactory.CreateDefault(options);
-            services.AddSingleton(client);
+            services.AddSingleton<IBusClient>(client);
             services.AddScoped<ICommandHandler<CreateRecord>, CreateRecordHandler>();
         }
     }
