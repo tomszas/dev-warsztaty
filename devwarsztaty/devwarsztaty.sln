@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "project2", "..\project2\project2.csproj", "{C4365011-6482-4BD7-A6B7-44B9CD9AA9B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "warsztaty.services", "..\project2\warsztaty.services.csproj", "{C4365011-6482-4BD7-A6B7-44B9CD9AA9B5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev-warsztaty", "..\project1\dev-warsztaty.csproj", "{13581DE9-6F77-4DB4-8BD7-246FF8BD9CDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "warsztaty.API", "..\project1\warsztaty.API.csproj", "{13581DE9-6F77-4DB4-8BD7-246FF8BD9CDC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "warsztaty.messages", "..\warsztaty.messages\warsztaty.messages.csproj", "{8541EAEF-E169-4896-B753-11925BB8C195}"
 EndProject
